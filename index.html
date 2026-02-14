@@ -104,24 +104,26 @@
       filter: blur(.2px);
     }
 
-    .bismillah{
-      position:relative;
-      font-family: "Aref Ruqaa Ink", serif;
-      font-size: clamp(44px, 7vw, 86px);
-      line-height:1.05;
-      margin: 6px 0 10px;
-      color: var(--gold2);
-      text-shadow:
-        0 0 18px rgba(240,209,138,.35),
-        0 0 42px rgba(178,138,58,.25);
-      letter-spacing:.5px;
-      animation: glow 2.8s ease-in-out infinite;
-    }
-    @keyframes glow{
-      0%,100%{filter: drop-shadow(0 0 0 rgba(0,0,0,0)); transform:translateY(0)}
-      50%{filter: drop-shadow(0 0 18px rgba(240,209,138,.25)); transform:translateY(-1px)}
-    }
+ .bismillah{
+  position:relative;
+  font-family: "Aref Ruqaa Ink", serif;
+  font-size: clamp(44px, 7vw, 86px);
+  line-height:1.1;
+  margin: 6px 0 14px;
+  letter-spacing:.5px;
 
+  /* Royal Gold Gradient */
+  background: linear-gradient(180deg, #fff3c4 0%, #d4af37 45%, #b28a3a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Elegant soft halo */
+  text-shadow:
+    0 0 20px rgba(240,209,138,0.35),
+    0 0 50px rgba(178,138,58,0.25);
+}
+
+   
     .intro-sub{
       position:relative;
       color: rgba(255,255,255,.82);
@@ -418,7 +420,7 @@
             <a class="btn" href="#programme">✨ See Events</a>
           </div>
 
-          <div class="audio-note" id="nasheed.mp4">
+          <div class="audio-note" id="audionote">
             Audio file not found. Replace <b>wedding-audio.mp3</b> in the same folder as this HTML, or update the filename in code.
           </div>
         </div>
