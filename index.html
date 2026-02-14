@@ -104,27 +104,30 @@
       filter: blur(.2px);
     }
 
-.bismillah{
+  .bismillah{
   position:relative;
   font-family: "Aref Ruqaa Ink", serif;
   font-size: clamp(44px, 7vw, 86px);
-  line-height:1.1;
-  margin: 6px 0 14px;
+  line-height:1.05;
+  margin: 6px 0 10px;
   letter-spacing:.5px;
 
-  /* Royal Gold Gradient */
-  background: linear-gradient(180deg, #fff3c4 0%, #d4af37 45%, #b28a3a 100%);
+  /* Golden text */
+  background: linear-gradient(180deg, #f7e2a4 0%, #d4af37 50%, #b28a3a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Elegant soft halo */
+  /* Soft golden glow behind */
   text-shadow:
-    0 0 20px rgba(240,209,138,0.35),
-    0 0 50px rgba(178,138,58,0.25);
+    0 0 25px rgba(240,209,138,0.35),
+    0 0 60px rgba(178,138,58,0.25);
 }
 
+    @keyframes glow{
+      0%,100%{filter: drop-shadow(0 0 0 rgba(0,0,0,0)); transform:translateY(0)}
+      50%{filter: drop-shadow(0 0 18px rgba(240,209,138,.25)); transform:translateY(-1px)}
+    }
 
-   
     .intro-sub{
       position:relative;
       color: rgba(255,255,255,.82);
@@ -377,11 +380,10 @@
       <div class="bismillah" dir="rtl" lang="ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
       <div class="intro-sub">In the name of Allah, the Most Gracious, the Most Merciful</div>
       <p class="intro-hint">
-       "And among His signs is this: that He created for you spouses from among yourselves,<br> that you may find tranquillity in them; and He has placed between you affection and mercy.<br> Surely in this are signs for a people who reflect."<br/>
+     "And among His signs is this: that He created for you spouses from among yourselves,<br> that you may find tranquillity in them; and He has placed between you affection and mercy.<br> Surely in this are signs for a people who reflect."<br/>
         <span style="color:rgba(240,209,138,.90); font-weight:800;">(Surah Ar-Rum 30:21)</span>
       </p>
       <button class="enter-btn" id="enterBtn">✨ Tap to Enter</button>
-    
     </div>
   </section>
 
@@ -421,9 +423,7 @@
             <a class="btn" href="#programme">✨ See Events</a>
           </div>
 
-          <div class="audio-note" id="audionote">
-            Audio file not found. Replace <b>wedding-audio.mp3</b> in the same folder as this HTML, or update the filename in code.
-          </div>
+        
         </div>
 
         <div class="card">
@@ -435,7 +435,7 @@
             <div class="label">Address</div>
             <div class="value">Nundresh Colony,<br/>Sector-B, Bemina,<br/>Srinagar</div>
           </div>
-        
+         
           <div class="row" id="contact">
             <div class="label">Call</div>
             <div class="value">
@@ -493,8 +493,7 @@
     // ==========================
     // CONFIG (EDIT IF NEEDED)
     // ==========================
-    document.getElementById("mapsBtn").href =
-  "https://maps.app.goo.gl/mgvuTRHKwTvjFSRK8";
+    const COORDS = { lat: 34.069620, lng: 74.768558 };
     // Countdown target: WALIMA — 13 Sep 2026 — 2:00 PM IST
     // Using explicit +05:30 offset to avoid timezone confusion across devices.
     const COUNTDOWN_TARGET_ISO = "2026-09-13T14:00:00+05:30";
